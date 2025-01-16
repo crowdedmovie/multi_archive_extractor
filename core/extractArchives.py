@@ -1,6 +1,7 @@
 import os
 import subprocess
 import logging
+import platform
 from time import perf_counter
 from PyQt6.QtCore import QThread, pyqtSignal
 
@@ -83,7 +84,16 @@ class ArchiveExtractor(QThread):
             else:
                 command = ["7z", "x", "-y", archive_path, f"-o{destination_folder}"]
 
-            result = subprocess.run(command, check=False, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+            window_creation_flag = subprocess.CREATE_NO_WINDOW if platform.system() == "Windows" else 0
+
+            result = subprocess.run(
+                command,
+                check=False,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True,
+                creationflags=window_creation_flag
+            )
 
             if result.returncode == 0:
                 end_time = perf_counter()

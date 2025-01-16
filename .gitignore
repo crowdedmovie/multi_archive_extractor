@@ -1,0 +1,65 @@
+# Python bytecode and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.installed.cfg
+MANIFEST
+*.egg
+share/python-wheels/
+develop-eggs/
+downloads/
+eggs/
+wheels/
+
+# Virtual environments
+.venv/
+.env/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+__pypackages__/
+
+# Logs and installer files
+pip-log.txt
+pip-delete-this-directory.txt
+
+# PyInstaller
+*.manifest
+*.spec
+
+# IDE settings
+.idea/
+
+# Testing and coverage
+.tox/
+.nox/
+.pytest_cache/
+.coverage
+.coverage.*
+.cache
+htmlcov/
+.hypothesis/
+.cover
+*.cover
+*.py,cover
+nosetests.xml
+coverage.xml
+.pybuilder/
+target/
+
+# Static analysis and type checking
+.mypy_cache/
+.dmypy.json
+.pyre/
+.pytype/
+
+# Task queues
+celerybeat-schedule
+celerybeat.pid

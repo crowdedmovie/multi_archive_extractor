@@ -5,7 +5,7 @@ import os
 import platform
 import subprocess
 import shutil
-
+import sys
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -24,6 +24,8 @@ class MainWindow(QMainWindow):
         self.ui.actionOpenLogs.triggered.connect(self.open_logs_file)
         self.ui.actionExit.triggered.connect(self.close_app)
         self.ui.btnCancelDecompression.clicked.connect(self.cancel_extraction)
+
+    # TODO : add ETA (estimate time of arrival) below progress bar
 
     def browse_source_folder(self):
         folder = QFileDialog.getExistingDirectory(self, "Select source folder")
@@ -173,16 +175,20 @@ class MainWindow(QMainWindow):
         self.ui.lblProgressBarValue.setText("0%")
 
     def open_logs_file(self):
-        logs_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "logs.log"))
-        system = platform.system()
+        # check if the program is running in a compiled (frozen) state
+        if getattr(sys, 'frozen', False):
+            exe_dir = os.path.dirname(sys.executable)
+        else:
+            # get logs.log file path form gui/ folder
+            exe_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+        logs_file = os.path.join(exe_dir, "logs.log")
 
+        system = platform.system()
         try:
             if system == "Windows":
                 os.startfile(logs_file)
             elif system == "Linux":
                 subprocess.run(["xdg-open", logs_file])
-            elif system == "Darwin":
-                subprocess.run(["open", logs_file])
             else:
                 QMessageBox.warning(self, "Warning", "System not supported for opening log file.")
 
@@ -213,7 +219,7 @@ class MainWindow(QMainWindow):
 
         unsupported_formats = []
         dependencies_to_formats = {
-            "7-Zip": ["7z", "Zip", "TarGz", "TarBz2"],
+            "7-Zip": ["7z", "Zip", "TarGz", "TarBz2", "Tar"],
             "UnRAR": ["Rar"]
         }
 

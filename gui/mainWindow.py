@@ -13,6 +13,7 @@ class MainWindow(QMainWindow):
         self.extractor = None
         self.ui = Ui_Main()
         self.ui.setupUi(self)
+        self.setWindowTitle("MultiArchiveExtractor v1.0.0")
 
         self.check_dependencies()
         # TODO : add img to Main Window, eventually error / info window

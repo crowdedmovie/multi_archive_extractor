@@ -3,7 +3,7 @@
 A simple and efficient tool using 7z & UnRar to extract multiple archive formats, including zip, rar, 7z, tar, tar.gz, and tar.bz2. Featuring an intuitive graphical interface built with PyQt6, it simplifies the process of managing compressed files.
 
 
-## FEATURES
+## Features
 
 - Supports multiple archive formats: zip, rar, 7z, tar, tar.gz, tar.bz2.
 - Intuitive graphical interface built with PyQt6 for batch extraction.

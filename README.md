@@ -15,7 +15,7 @@ A simple and efficient tool using 7z & UnRar to extract multiple archive formats
 
 ## Requirements
 
-- **Python 3.x** (only required for the non-compiled version).
+- **Python 3.10** (only required for the non-compiled version).
 - Dependencies (installable via `pip`):
   - PyQt6
 - External tools required for archive extraction:

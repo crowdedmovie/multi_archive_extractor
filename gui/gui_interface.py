@@ -12,152 +12,355 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_Main(object):
     def setupUi(self, Main):
         Main.setObjectName("Main")
-        Main.resize(655, 605)
+        Main.resize(800, 600)
+
+        # Create main layout
         self.centralwidget = QtWidgets.QWidget(parent=Main)
         self.centralwidget.setObjectName("centralwidget")
-        self.formLayoutWidget = QtWidgets.QWidget(parent=self.centralwidget)
-        self.formLayoutWidget.setGeometry(QtCore.QRect(10, 130, 186, 51))
-        self.formLayoutWidget.setObjectName("formLayoutWidget")
-        self.frmFileFormats = QtWidgets.QFormLayout(self.formLayoutWidget)
-        self.frmFileFormats.setContentsMargins(0, 0, 0, 0)
-        self.frmFileFormats.setObjectName("frmFileFormats")
-        self.chkRarFormat = QtWidgets.QCheckBox(parent=self.formLayoutWidget)
-        self.chkRarFormat.setObjectName("chkRarFormat")
-        self.frmFileFormats.setWidget(0, QtWidgets.QFormLayout.ItemRole.LabelRole, self.chkRarFormat)
-        self.chkTarGzFormat = QtWidgets.QCheckBox(parent=self.formLayoutWidget)
-        self.chkTarGzFormat.setObjectName("chkTarGzFormat")
-        self.frmFileFormats.setWidget(0, QtWidgets.QFormLayout.ItemRole.FieldRole, self.chkTarGzFormat)
-        self.chkZipFormat = QtWidgets.QCheckBox(parent=self.formLayoutWidget)
-        self.chkZipFormat.setObjectName("chkZipFormat")
-        self.frmFileFormats.setWidget(1, QtWidgets.QFormLayout.ItemRole.LabelRole, self.chkZipFormat)
-        self.chkTarBz2Format = QtWidgets.QCheckBox(parent=self.formLayoutWidget)
-        self.chkTarBz2Format.setObjectName("chkTarBz2Format")
-        self.frmFileFormats.setWidget(1, QtWidgets.QFormLayout.ItemRole.FieldRole, self.chkTarBz2Format)
-        self.verticalLayoutWidget = QtWidgets.QWidget(parent=self.centralwidget)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(10, 0, 631, 83))
-        self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
-        self.vlayoutPaths = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
-        self.vlayoutPaths.setContentsMargins(0, 0, 0, 0)
-        self.vlayoutPaths.setObjectName("vlayoutPaths")
-        self.hlayoutSource = QtWidgets.QHBoxLayout()
-        self.hlayoutSource.setObjectName("hlayoutSource")
-        self.lblSourceFolder = QtWidgets.QLabel(parent=self.verticalLayoutWidget)
-        self.lblSourceFolder.setObjectName("lblSourceFolder")
-        self.hlayoutSource.addWidget(self.lblSourceFolder)
-        self.txtSourceFolder = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget)
-        self.txtSourceFolder.setObjectName("txtSourceFolder")
-        self.hlayoutSource.addWidget(self.txtSourceFolder)
-        self.btnSelectSource = QtWidgets.QToolButton(parent=self.verticalLayoutWidget)
-        self.btnSelectSource.setObjectName("btnSelectSource")
-        self.hlayoutSource.addWidget(self.btnSelectSource)
-        self.vlayoutPaths.addLayout(self.hlayoutSource)
-        self.hlayoutDestination = QtWidgets.QHBoxLayout()
-        self.hlayoutDestination.setObjectName("hlayoutDestination")
-        self.lblDestinationFolder = QtWidgets.QLabel(parent=self.verticalLayoutWidget)
-        self.lblDestinationFolder.setObjectName("lblDestinationFolder")
-        self.hlayoutDestination.addWidget(self.lblDestinationFolder)
-        self.txtDestinationFolder = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget)
-        self.txtDestinationFolder.setObjectName("txtDestinationFolder")
-        self.hlayoutDestination.addWidget(self.txtDestinationFolder)
-        self.btnSelectDestination = QtWidgets.QToolButton(parent=self.verticalLayoutWidget)
-        self.btnSelectDestination.setObjectName("btnSelectDestination")
-        self.hlayoutDestination.addWidget(self.btnSelectDestination)
-        self.vlayoutPaths.addLayout(self.hlayoutDestination)
-        self.lineDividerTop = QtWidgets.QFrame(parent=self.centralwidget)
-        self.lineDividerTop.setGeometry(QtCore.QRect(10, 80, 631, 21))
-        self.lineDividerTop.setFrameShape(QtWidgets.QFrame.Shape.HLine)
-        self.lineDividerTop.setFrameShadow(QtWidgets.QFrame.Shadow.Sunken)
-        self.lineDividerTop.setObjectName("lineDividerTop")
-        self.btnHelp = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.btnHelp.setEnabled(False)
-        self.btnHelp.setGeometry(QtCore.QRect(10, 100, 21, 21))
-        self.btnHelp.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.WhatsThisCursor))
-        self.btnHelp.setStyleSheet("background-color: rgb(197, 197, 197);\n"
-"color: rgb(0, 0, 0);")
-        self.btnHelp.setObjectName("btnHelp")
-        self.lblSupportedFormats = QtWidgets.QLabel(parent=self.centralwidget)
-        self.lblSupportedFormats.setGeometry(QtCore.QRect(40, 100, 331, 19))
-        self.lblSupportedFormats.setObjectName("lblSupportedFormats")
-        self.lineDividerMiddle = QtWidgets.QFrame(parent=self.centralwidget)
-        self.lineDividerMiddle.setGeometry(QtCore.QRect(10, 180, 631, 21))
-        self.lineDividerMiddle.setFrameShape(QtWidgets.QFrame.Shape.HLine)
-        self.lineDividerMiddle.setFrameShadow(QtWidgets.QFrame.Shadow.Sunken)
-        self.lineDividerMiddle.setObjectName("lineDividerMiddle")
-        self.formLayoutWidget_2 = QtWidgets.QWidget(parent=self.centralwidget)
-        self.formLayoutWidget_2.setGeometry(QtCore.QRect(140, 130, 131, 51))
-        self.formLayoutWidget_2.setObjectName("formLayoutWidget_2")
-        self.frmFileFormats2 = QtWidgets.QFormLayout(self.formLayoutWidget_2)
-        self.frmFileFormats2.setContentsMargins(0, 0, 0, 0)
-        self.frmFileFormats2.setObjectName("frmFileFormats2")
-        self.chk7zFormat = QtWidgets.QCheckBox(parent=self.formLayoutWidget_2)
-        self.chk7zFormat.setObjectName("chk7zFormat")
-        self.frmFileFormats2.setWidget(0, QtWidgets.QFormLayout.ItemRole.LabelRole, self.chk7zFormat)
-        self.chkTarFormat = QtWidgets.QCheckBox(parent=self.formLayoutWidget_2)
-        self.chkTarFormat.setObjectName("chkTarFormat")
-        self.frmFileFormats2.setWidget(1, QtWidgets.QFormLayout.ItemRole.LabelRole, self.chkTarFormat)
-        self.label_16 = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label_16.setGeometry(QtCore.QRect(430, 100, 5, 36))
-        self.label_16.setText("")
-        self.label_16.setObjectName("label_16")
-        self.gvDecompressionLogs = QtWidgets.QTextEdit(parent=self.centralwidget)
-        self.gvDecompressionLogs.setEnabled(True)
-        self.gvDecompressionLogs.setGeometry(QtCore.QRect(10, 200, 631, 241))
-        self.gvDecompressionLogs.setReadOnly(True)
-        self.gvDecompressionLogs.setObjectName("gvDecompressionLogs")
-        self.horizontalLayoutWidget_2 = QtWidgets.QWidget(parent=self.centralwidget)
-        self.horizontalLayoutWidget_2.setGeometry(QtCore.QRect(10, 450, 631, 31))
-        self.horizontalLayoutWidget_2.setObjectName("horizontalLayoutWidget_2")
-        self.hlayoutLogsUi = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_2)
-        self.hlayoutLogsUi.setContentsMargins(0, 0, 0, 0)
-        self.hlayoutLogsUi.setObjectName("hlayoutLogsUi")
-        self.progressBarDecompression = QtWidgets.QProgressBar(parent=self.horizontalLayoutWidget_2)
-        self.progressBarDecompression.setMouseTracking(False)
-        self.progressBarDecompression.setTabletTracking(False)
-        self.progressBarDecompression.setAcceptDrops(False)
-        self.progressBarDecompression.setAutoFillBackground(False)
-        self.progressBarDecompression.setStyleSheet("QProgressBar::chunk {\n"
-"    background-color: #06b025;\n"
-"            }")
-        self.progressBarDecompression.setProperty("value", 0)
-        self.progressBarDecompression.setTextVisible(False)
-        self.progressBarDecompression.setInvertedAppearance(False)
-        self.progressBarDecompression.setObjectName("progressBarDecompression")
-        self.hlayoutLogsUi.addWidget(self.progressBarDecompression)
-        self.lblProgressBarValue = QtWidgets.QLabel(parent=self.horizontalLayoutWidget_2)
-        self.lblProgressBarValue.setObjectName("lblProgressBarValue")
-        self.hlayoutLogsUi.addWidget(self.lblProgressBarValue)
-        self.btnClearLogs = QtWidgets.QPushButton(parent=self.horizontalLayoutWidget_2)
-        self.btnClearLogs.setObjectName("btnClearLogs")
-        self.hlayoutLogsUi.addWidget(self.btnClearLogs)
-        self.btnStartDecompression = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.btnStartDecompression.setGeometry(QtCore.QRect(410, 530, 111, 31))
-        self.btnStartDecompression.setObjectName("btnStartDecompression")
-        self.btnCancelDecompression = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.btnCancelDecompression.setGeometry(QtCore.QRect(530, 530, 111, 31))
-        self.btnCancelDecompression.setObjectName("btnCancelDecompression")
-        self.lblFilesProcessed = QtWidgets.QLabel(parent=self.centralwidget)
-        self.lblFilesProcessed.setGeometry(QtCore.QRect(10, 500, 279, 21))
-        self.lblFilesProcessed.setObjectName("lblFilesProcessed")
-        self.lblDataProcessed = QtWidgets.QLabel(parent=self.centralwidget)
-        self.lblDataProcessed.setGeometry(QtCore.QRect(10, 540, 279, 16))
-        self.lblDataProcessed.setObjectName("lblDataProcessed")
         Main.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(parent=Main)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 655, 21))
-        self.menubar.setObjectName("menubar")
-        self.menuFIle = QtWidgets.QMenu(parent=self.menubar)
-        self.menuFIle.setObjectName("menuFIle")
+
+        # Create main vertical layout for the central widget
+        self.mainLayout = QtWidgets.QVBoxLayout(self.centralwidget)
+        self.mainLayout.setContentsMargins(20, 20, 20, 20)
+        self.mainLayout.setSpacing(15)
+
+        # Paths section
+        self.pathsGroup = QtWidgets.QGroupBox("File Locations")
+        self.pathsGroup.setObjectName("pathsGroup")
+        self.pathsLayout = QtWidgets.QVBoxLayout(self.pathsGroup)
+        self.pathsLayout.setSpacing(10)
+
+        # Source folder
+        self.hlayoutSource = QtWidgets.QHBoxLayout()
+        self.lblSourceFolder = QtWidgets.QLabel("Source Folder:")
+        self.lblSourceFolder.setMinimumWidth(100)
+        self.txtSourceFolder = QtWidgets.QLineEdit()
+        self.btnSelectSource = QtWidgets.QPushButton()
+        self.btnSelectSource.setIcon(QtGui.QIcon.fromTheme("folder-open"))
+        self.btnSelectSource.setFixedWidth(40)
+        self.hlayoutSource.addWidget(self.lblSourceFolder)
+        self.hlayoutSource.addWidget(self.txtSourceFolder)
+        self.hlayoutSource.addWidget(self.btnSelectSource)
+        self.pathsLayout.addLayout(self.hlayoutSource)
+
+        # Destination folder
+        self.hlayoutDestination = QtWidgets.QHBoxLayout()
+        self.lblDestinationFolder = QtWidgets.QLabel("Destination:")
+        self.lblDestinationFolder.setMinimumWidth(100)
+        self.txtDestinationFolder = QtWidgets.QLineEdit()
+        self.btnSelectDestination = QtWidgets.QPushButton()
+        self.btnSelectDestination.setIcon(QtGui.QIcon.fromTheme("folder-open"))
+        self.btnSelectDestination.setFixedWidth(40)
+        self.hlayoutDestination.addWidget(self.lblDestinationFolder)
+        self.hlayoutDestination.addWidget(self.txtDestinationFolder)
+        self.hlayoutDestination.addWidget(self.btnSelectDestination)
+        self.pathsLayout.addLayout(self.hlayoutDestination)
+
+        self.mainLayout.addWidget(self.pathsGroup)
+
+        # Formats section
+        self.formatsGroup = QtWidgets.QGroupBox("Archive Formats")
+        self.formatsGroup.setObjectName("formatsGroup")
+        self.formatsLayout = QtWidgets.QGridLayout(self.formatsGroup)
+        self.formatsLayout.setSpacing(10)
+
+        # Create all checkboxes
+        self.chkZip = QtWidgets.QCheckBox("ZIP")
+        self.chkZip.setChecked(False)
+        self.chkRar = QtWidgets.QCheckBox("RAR")
+        self.chk7z = QtWidgets.QCheckBox("7Z")
+        self.chkTar = QtWidgets.QCheckBox("TAR")
+
+        self.chkGzip = QtWidgets.QCheckBox("GZIP")
+        self.chkBzip2 = QtWidgets.QCheckBox("BZIP2")
+        self.chkXz = QtWidgets.QCheckBox("XZ")
+        self.chkWim = QtWidgets.QCheckBox("WIM")
+
+        self.chkIso = QtWidgets.QCheckBox("ISO")
+        self.chkCab = QtWidgets.QCheckBox("CAB")
+        self.chkArj = QtWidgets.QCheckBox("ARJ")
+        self.chkLzh = QtWidgets.QCheckBox("LZH")
+
+        # Create subtle vertical separators
+        def create_vertical_separator():
+            separator = QtWidgets.QFrame()
+            separator.setFrameShape(QtWidgets.QFrame.Shape.VLine)
+            separator.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+            separator.setStyleSheet("""
+                QFrame {
+                    color: #3a3a3a;  /* Very subtle, almost invisible in dark mode */
+                    width: 1px;
+                }
+            """)
+            return separator
+
+        # Add checkboxes to grid layout (3 rows, 4 columns)
+        # Row 1
+        self.formatsLayout.addWidget(self.chkZip, 0, 0)
+        self.formatsLayout.addWidget(create_vertical_separator(), 0, 1)
+        self.formatsLayout.addWidget(self.chkRar, 0, 2)
+        self.formatsLayout.addWidget(create_vertical_separator(), 0, 3)
+        self.formatsLayout.addWidget(self.chk7z, 0, 4)
+        self.formatsLayout.addWidget(create_vertical_separator(), 0, 5)
+        self.formatsLayout.addWidget(self.chkTar, 0, 6)
+
+        # Row 2
+        self.formatsLayout.addWidget(self.chkGzip, 1, 0)
+        self.formatsLayout.addWidget(create_vertical_separator(), 1, 1)
+        self.formatsLayout.addWidget(self.chkBzip2, 1, 2)
+        self.formatsLayout.addWidget(create_vertical_separator(), 1, 3)
+        self.formatsLayout.addWidget(self.chkXz, 1, 4)
+        self.formatsLayout.addWidget(create_vertical_separator(), 1, 5)
+        self.formatsLayout.addWidget(self.chkWim, 1, 6)
+
+        # Row 3
+        self.formatsLayout.addWidget(self.chkIso, 2, 0)
+        self.formatsLayout.addWidget(create_vertical_separator(), 2, 1)
+        self.formatsLayout.addWidget(self.chkCab, 2, 2)
+        self.formatsLayout.addWidget(create_vertical_separator(), 2, 3)
+        self.formatsLayout.addWidget(self.chkArj, 2, 4)
+        self.formatsLayout.addWidget(create_vertical_separator(), 2, 5)
+        self.formatsLayout.addWidget(self.chkLzh, 2, 6)
+
+        # Configure layout
+        self.formatsLayout.setColumnStretch(7, 1)  # Allow expansion
+        self.formatsLayout.setHorizontalSpacing(5)  # Minimal spacing
+
+        self.mainLayout.addWidget(self.formatsGroup)
+
+        # Progress section
+        self.progressGroup = QtWidgets.QGroupBox("Progress")
+        self.progressLayout = QtWidgets.QVBoxLayout(self.progressGroup)
+        self.progressLayout.setSpacing(10)
+
+        # Progress bar and percentage
+        self.progressBarLayout = QtWidgets.QHBoxLayout()
+        self.progressBar = QtWidgets.QProgressBar()
+        self.progressBar.setObjectName("progressBar")
+        self.progressBar.setTextVisible(False)  # Hide text inside progress bar
+        self.progressBarLayout.addWidget(self.progressBar, stretch=1)
+        self.lblProgressValue = QtWidgets.QLabel("0%")
+        self.lblProgressValue.setMinimumWidth(50)
+        self.progressBarLayout.addWidget(self.lblProgressValue)
+        self.progressLayout.addLayout(self.progressBarLayout)
+
+        # Progress stats layout
+        self.statsLayout = QtWidgets.QGridLayout()
+        self.statsLayout.setSpacing(10)
+
+        # Files processed
+        self.lblFilesProcessed = QtWidgets.QLabel("Files processed:")
+        self.lblFilesProcessedValue = QtWidgets.QLabel("0 / 0")
+        self.statsLayout.addWidget(self.lblFilesProcessed, 0, 0)
+        self.statsLayout.addWidget(self.lblFilesProcessedValue, 0, 1)
+
+        # Data processed
+        self.lblDataProcessed = QtWidgets.QLabel("Data processed:")
+        self.lblDataProcessedValue = QtWidgets.QLabel("0 / 0 B")
+        self.statsLayout.addWidget(self.lblDataProcessed, 1, 0)
+        self.statsLayout.addWidget(self.lblDataProcessedValue, 1, 1)
+
+        # ETA
+        self.lblETA = QtWidgets.QLabel("Estimated time remaining:")
+        self.lblETAValue = QtWidgets.QLabel("--:--")
+        self.statsLayout.addWidget(self.lblETA, 2, 0)
+        self.statsLayout.addWidget(self.lblETAValue, 2, 1)
+
+        # Add stretch to push stats to the left
+        self.statsLayout.setColumnStretch(2, 1)
+
+        # Add stats layout to progress group
+        self.progressLayout.addLayout(self.statsLayout)
+
+        # Logs
+        self.txtLogs = QtWidgets.QTextEdit()
+        self.txtLogs.setObjectName("txtLogs")
+        self.txtLogs.setReadOnly(True)
+        self.txtLogs.setMinimumHeight(150)
+        self.progressLayout.addWidget(self.txtLogs)
+
+        self.mainLayout.addWidget(self.progressGroup)
+
+        # Buttons section
+        self.buttonsLayout = QtWidgets.QHBoxLayout()
+        self.buttonsLayout.setSpacing(10)
+
+        self.btnStartDecompression = QtWidgets.QPushButton("Start Extraction")
+        self.btnStartDecompression.setObjectName("btnStartDecompression")
+        self.btnStartDecompression.setMinimumWidth(120)
+        self.btnStartDecompression.setStyleSheet("""
+            QPushButton {
+                background-color: #2ecc71;
+                color: white;
+                border: none;
+                padding: 8px;
+                border-radius: 4px;
+            }
+            QPushButton:hover {
+                background-color: #27ae60;
+            }
+            QPushButton:pressed {
+                background-color: #219a52;
+            }
+        """)
+
+        self.btnCancelDecompression = QtWidgets.QPushButton("Cancel")
+        self.btnCancelDecompression.setObjectName("btnCancelDecompression")
+        self.btnCancelDecompression.setMinimumWidth(100)
+        self.btnCancelDecompression.setStyleSheet("""
+            QPushButton {
+                background-color: #e74c3c;
+                color: white;
+                border: none;
+                padding: 8px;
+                border-radius: 4px;
+            }
+            QPushButton:hover {
+                background-color: #c0392b;
+            }
+            QPushButton:pressed {
+                background-color: #a93226;
+            }
+        """)
+
+        self.btnClearLogs = QtWidgets.QPushButton("Clear Logs")
+        self.btnClearLogs.setObjectName("btnClearLogs")
+        self.btnClearLogs.setMinimumWidth(100)
+        self.btnClearLogs.setStyleSheet("""
+            QPushButton {
+                background-color: #3498db;
+                color: white;
+                border: none;
+                padding: 8px;
+                border-radius: 4px;
+            }
+            QPushButton:hover {
+                background-color: #2980b9;
+            }
+            QPushButton:pressed {
+                background-color: #2471a3;
+            }
+        """)
+
+        self.buttonsLayout.addStretch()
+        self.buttonsLayout.addWidget(self.btnClearLogs)
+        self.buttonsLayout.addWidget(self.btnCancelDecompression)
+        self.buttonsLayout.addWidget(self.btnStartDecompression)
+
+        self.mainLayout.addLayout(self.buttonsLayout)
+
+        # Set up menu bar
+        self.menubar = QtWidgets.QMenuBar(Main)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
+
+        # File menu
+        self.menuFile = self.menubar.addMenu("File")
+
+        # New actions for File menu
+        self.actionSelectInputDir = QtGui.QAction("Select Input Directory", Main)
+        self.actionSelectInputDir.setText("Select Input Directory")
+
+        self.actionSelectOutputDir = QtGui.QAction("Select Output Directory", Main)
+        self.actionSelectOutputDir.setText("Select Output Directory")
+
+        self.actionClearLogs = QtGui.QAction("Clear Logs", Main)
+        self.actionClearLogs.setText("Clear Logs")
+
+        # Existing actions for File menu
+        self.actionOpenLogs = QtGui.QAction("Open Logs File", Main)
+        self.actionOpenLogs.setText("Open Logs File")
+
+        self.actionExit = QtGui.QAction("Exit", Main)
+        self.actionExit.setText("Exit")
+
+        # Add actions to File menu
+        self.menuFile.addAction(self.actionSelectInputDir)
+        self.menuFile.addAction(self.actionSelectOutputDir)
+        self.menuFile.addSeparator()
+        self.menuFile.addAction(self.actionClearLogs)
+        self.menuFile.addSeparator()
+        self.menuFile.addAction(self.actionOpenLogs)
+        self.menuFile.addSeparator()
+        self.menuFile.addAction(self.actionExit)
+
+        # View menu
+        self.menuView = self.menubar.addMenu("View")
+        self.actionToggleTheme = QtGui.QAction("Toggle Theme", Main)
+        self.actionToggleTheme.setShortcut("Ctrl+T")
+        self.menuView.addAction(self.actionToggleTheme)
+
+        # About menu
+        self.menuAbout = self.menubar.addMenu("About")
+
+        # GitHub repository action
+        self.actionOpenGitHub = QtGui.QAction("Open GitHub Repository", Main)
+        self.actionOpenGitHub.setStatusTip("Open the project's GitHub repository")
+        self.menuAbout.addAction(self.actionOpenGitHub)
+
+        # Usage instructions action
+        self.actionUsageInstructions = QtGui.QAction("Usage Instructions", Main)
+        self.actionUsageInstructions.setStatusTip("View usage instructions for the application")
+        self.menuAbout.addAction(self.actionUsageInstructions)
+
+        # License action
+        self.actionOpenLicense = QtGui.QAction("Open License", Main)
+        self.actionOpenLicense.setStatusTip("View the application's license")
+        self.menuAbout.addAction(self.actionOpenLicense)
+
         Main.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(parent=Main)
-        self.statusbar.setObjectName("statusbar")
-        Main.setStatusBar(self.statusbar)
-        self.actionOpenLogs = QtGui.QAction(parent=Main)
-        self.actionOpenLogs.setObjectName("actionOpenLogs")
-        self.actionExit = QtGui.QAction(parent=Main)
-        self.actionExit.setObjectName("actionExit")
-        self.menuFIle.addAction(self.actionOpenLogs)
-        self.menuFIle.addAction(self.actionExit)
-        self.menubar.addAction(self.menuFIle.menuAction())
+
+        # Apply global stylesheet
+        Main.setStyleSheet("""
+            QMainWindow {
+                background-color: #f5f6fa;
+            }
+            QGroupBox {
+                font-weight: bold;
+                border: 1px solid #bdc3c7;
+                border-radius: 6px;
+                margin-top: 6px;
+                padding-top: 10px;
+            }
+            QGroupBox::title {
+                subcontrol-origin: margin;
+                left: 10px;
+                padding: 0 3px 0 3px;
+            }
+            QLineEdit {
+                padding: 5px;
+                border: 1px solid #bdc3c7;
+                border-radius: 4px;
+                background-color: white;
+            }
+            QTextEdit {
+                border: 1px solid #bdc3c7;
+                border-radius: 4px;
+                background-color: white;
+            }
+            QProgressBar {
+                border: 1px solid #bdc3c7;
+                border-radius: 4px;
+                text-align: center;
+                height: 20px;
+            }
+            QProgressBar::chunk {
+                background-color: #2ecc71;
+                border-radius: 3px;
+            }
+            QCheckBox {
+                spacing: 8px;
+            }
+            QCheckBox::indicator {
+                width: 18px;
+                height: 18px;
+            }
+            QLabel {
+                color: #2c3e50;
+            }
+            QLabel[class="stats"] {
+                font-family: monospace;
+            }
+        """)
 
         self.retranslateUi(Main)
         QtCore.QMetaObject.connectSlotsByName(Main)
@@ -165,25 +368,43 @@ class Ui_Main(object):
     def retranslateUi(self, Main):
         _translate = QtCore.QCoreApplication.translate
         Main.setWindowTitle(_translate("Main", "Multi Archive Extractor"))
-        self.chkRarFormat.setText(_translate("Main", "RAR"))
-        self.chkTarGzFormat.setText(_translate("Main", "TAR.GZ"))
-        self.chkZipFormat.setText(_translate("Main", "ZIP"))
-        self.chkTarBz2Format.setText(_translate("Main", "TAR.BZ2                       "))
-        self.lblSourceFolder.setText(_translate("Main", "Source Folder :         "))
-        self.btnSelectSource.setText(_translate("Main", "Browse"))
-        self.lblDestinationFolder.setText(_translate("Main", "Destination Folder : "))
-        self.btnSelectDestination.setText(_translate("Main", "Browse"))
-        self.btnHelp.setToolTip(_translate("Main", "<html><head/><body><p>Only files with the selected format(s) will be decompressed into the destination folder. Other files will be ignored. The folder structure of the source folder will be preserved.</p></body></html>"))
-        self.btnHelp.setText(_translate("Main", "?"))
-        self.lblSupportedFormats.setText(_translate("Main", "Select file format(s) to decompress :"))
-        self.chk7zFormat.setText(_translate("Main", "7Z"))
-        self.chkTarFormat.setText(_translate("Main", "TAR"))
-        self.lblProgressBarValue.setText(_translate("Main", "0%"))
-        self.btnClearLogs.setText(_translate("Main", "Clear Logs"))
+        self.pathsGroup.setTitle(_translate("Main", "File Locations"))
+        self.lblSourceFolder.setText(_translate("Main", "Source Folder:"))
+        self.btnSelectSource.setText(_translate("Main", "..."))
+        self.lblDestinationFolder.setText(_translate("Main", "Destination:"))
+        self.btnSelectDestination.setText(_translate("Main", "..."))
+        self.formatsGroup.setTitle(_translate("Main", "Archive Formats"))
+        self.chkZip.setText(_translate("Main", "ZIP"))
+        self.chkRar.setText(_translate("Main", "RAR"))
+        self.chk7z.setText(_translate("Main", "7Z"))
+        self.chkTar.setText(_translate("Main", "TAR"))
+        self.chkGzip.setText(_translate("Main", "GZIP"))
+        self.chkBzip2.setText(_translate("Main", "BZIP2"))
+        self.chkXz.setText(_translate("Main", "XZ"))
+        self.chkWim.setText(_translate("Main", "WIM"))
+        self.chkIso.setText(_translate("Main", "ISO"))
+        self.chkCab.setText(_translate("Main", "CAB"))
+        self.chkArj.setText(_translate("Main", "ARJ"))
+        self.chkLzh.setText(_translate("Main", "LZH"))
+        self.progressGroup.setTitle(_translate("Main", "Progress"))
+        self.lblFilesProcessed.setText(_translate("Main", "Files processed:"))
+        self.lblFilesProcessedValue.setText(_translate("Main", "0 / 0"))
+        self.lblDataProcessed.setText(_translate("Main", "Data processed:"))
+        self.lblDataProcessedValue.setText(_translate("Main", "0 / 0 B"))
+        self.lblETA.setText(_translate("Main", "Estimated time remaining:"))
+        self.lblETAValue.setText(_translate("Main", "--:--"))
         self.btnStartDecompression.setText(_translate("Main", "Start Extraction"))
         self.btnCancelDecompression.setText(_translate("Main", "Cancel"))
-        self.lblFilesProcessed.setText(_translate("Main", "Files processed: 0 / 0"))
-        self.lblDataProcessed.setText(_translate("Main", "Data processed: 0 / 0 B"))
-        self.menuFIle.setTitle(_translate("Main", "File"))
-        self.actionOpenLogs.setText(_translate("Main", "View Logs"))
+        self.btnClearLogs.setText(_translate("Main", "Clear Logs"))
+        self.menuFile.setTitle(_translate("Main", "File"))
+        self.actionSelectInputDir.setText(_translate("Main", "Select Input Directory"))
+        self.actionSelectOutputDir.setText(_translate("Main", "Select Output Directory"))
+        self.actionClearLogs.setText(_translate("Main", "Clear Logs"))
+        self.actionOpenLogs.setText(_translate("Main", "Open Logs File"))
         self.actionExit.setText(_translate("Main", "Exit"))
+        self.menuView.setTitle(_translate("Main", "View"))
+        self.actionToggleTheme.setText(_translate("Main", "Toggle Theme"))
+        self.menuAbout.setTitle(_translate("Main", "About"))
+        self.actionOpenGitHub.setText(_translate("Main", "Open GitHub Repository"))
+        self.actionUsageInstructions.setText(_translate("Main", "Usage Instructions"))
+        self.actionOpenLicense.setText(_translate("Main", "Open License"))
